@@ -24,7 +24,7 @@ You will need to set up the following:
 Create a workflow on the user input of the Account ID field, and add a new action. Let's begin with writing an if statement on the condition that the Account ID is not null.
 
 
-```
+```jsx
 if(input.ACCOUNT_ID != null)
 {
 
@@ -34,7 +34,7 @@ if(input.ACCOUNT_ID != null)
 
 Inside of this if statement, let's begin adding the table styling in an HTML head tag and store this in a variable called 'x'. Notice how all of the HTML and CSS syntax are contained in quotations:
 
-```
+```jsx
 if(input.ACCOUNT_ID != null)
 {
 	//style the table
@@ -48,7 +48,7 @@ if(input.ACCOUNT_ID != null)
 Append your table and table header tags to the 'x' variable. My table headers will read "Name", "Phone", and "Email". 
 
 
-```
+```jsx
 ...
 	//start the table and add the headers
 	x = x + "<table><thead><tr><th>Name</th><th>Phone</th><th>Email</th> </tr> </thead><tbody>";
@@ -58,7 +58,7 @@ Append your table and table header tags to the 'x' variable. My table headers wi
 
 Store the list you want to use in a list variable, then iterate through the list with a for each loop, getting the pieces of information you need for each record. In this example, I want to get the first and last name, email and phone number. I have omitted the null and empty checks for brevity, but you may want to add these in case you do not have complete data coming from your CRM. Concatenate the Deluge variables with the HTML/CSS syntax, using opening and closing quotations as needed. 
 
-```
+```jsx
 ...
 	//iterate through all contacts for a particular account record
 	getRelatedContacts = zoho.crm.getRelatedRecords("Contacts","Accounts",input.Account_ID);
@@ -80,7 +80,7 @@ Store the list you want to use in a list variable, then iterate through the list
 
 Append the closing table tags to the 'x' variable, then set the Note field to equal 'x'.
 
-```
+```jsx
 ...
 //close the table tags
 x = x + "</tbody></table>";
